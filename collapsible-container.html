@@ -1,0 +1,129 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-collapse/iron-collapse.html">
+<link rel="import" href="../iron-icons/av-icons.html">
+<link rel="import" href="../iron-icons/communication-icons.html">
+<link rel="import" href="../iron-icons/device-icons.html">
+<link rel="import" href="../iron-icons/editor-icons.html">
+<link rel="import" href="../iron-icons/hardware-icons.html">
+<link rel="import" href="../iron-icons/image-icons.html">
+<link rel="import" href="../iron-icons/iron-icons.html">
+<link rel="import" href="../iron-icons/maps-icons.html">
+<link rel="import" href="../iron-icons/notification-icons.html">
+<link rel="import" href="../iron-icons/places-icons.html">
+<link rel="import" href="../iron-icons/social-icons.html">
+
+<!--
+`collapsible-container`
+Polymer 1.X and 2.X collapsible container
+
+@demo demo/index.html
+-->
+
+<dom-module id="collapsible-container">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+      :host #expandIcon {
+        float: right;
+        -webkit-transition: -webkit-transform 0.3s;
+        transition: transform 0.3s;
+      }
+      :host #logoIcon {
+        float: left;
+      }
+      :host .header {
+        cursor: pointer;
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+      }
+      :host .text {
+        word-wrap: break-word;
+      }
+      :host .cell {
+        display: table-cell;
+        vertical-align: middle;
+      }
+      :host .icon {
+        width: 30px;
+      }
+      :host .rotate {
+        -webkit-transform: rotate(-180deg);
+        transform: rotate(-180deg);
+        transition-timing-function: ease;
+      }
+      :host iron-collapse {
+        padding-top: 5px;
+      }
+    </style>
+    <div>
+      <div class="header" on-click="toggle">
+        <div style="display: table-row;">
+          <template is="dom-if" if="[[icon]]">
+            <div class="cell icon"><iron-icon id="logoIcon" icon="[[icon]]"></iron-icon></div>
+          </template>
+          <div class="cell text">[[header]]</div>
+          <div class="cell icon">
+            <template is="dom-if" if="[[chevron]]">
+              <iron-icon id="expandIcon" icon="icons:expand-more"></iron-icon>
+            </template>
+          </div>
+        </div>
+      </div>
+      <iron-collapse>
+        <slot></slot>
+      </iron-collapse>
+    </div>
+  </template>
+  <script>
+
+  Polymer({
+
+    is: 'collapsible-container',
+
+    properties: {
+      icon: {
+        type: String,
+        notify: false
+      },
+      header: {
+        type: String,
+        notify: false
+      },
+      chevron: {
+        type: Boolean,
+        notify: false,
+        value: false
+      },
+      open: {
+        type: Boolean,
+        notify: true,
+        value: false
+      }
+    },
+
+
+
+    toggle: function() {
+      var container = this.$$('iron-collapse');
+      container.toggle();
+
+      if (container.opened) {
+        this.open = true;
+        if (this.chevron)
+          this.$$('#expandIcon').classList.add('rotate');
+      } else {
+        this.open = false
+        if (this.chevron)
+          this.$$('#expandIcon').classList.remove('rotate');
+      }
+
+      var evt = new CustomEvent('collapsibleToggle', { 'detail': this.open });
+      this.dispatchEvent(evt);
+    }
+
+  });
+  </script>
+</dom-module>
