@@ -63,15 +63,55 @@
       <h3>accordion-container with custom style</h3>
       <demo-snippet>
         <template>
-          <accordion-container>
-            <collapsible-container header="Lorem ipsum dolor">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc neque orci, ultricies vitae sagittis eget, rutrum a odio. Integer dignissim mi justo. Nulla sed velit ut velit mollis rhoncus accumsan vitae sapien. Nunc tincidunt pulvinar pretium. Aliquam feugiat tellus turpis. Praesent ex purus, vestibulum sed dolor a, laoreet dapibus diam. Ut a maximus dui.
+          <style is="custom-style">
+             .accordion {
+               border-bottom: 1px solid black;
+             }
+            .collapsible {
+              border-left: 1px solid black;
+              border-right: 1px solid black;
+              --collapsible-container-header: {
+                background-color: #bf0b0b;
+                padding: 15px;
+                border-top: 1px solid black;
+              };
+              --collapsible-container-header-open: {
+                background-color: #eac0c0;
+                border-bottom: 1px solid black;
+              };
+              --collapsible-container-text: {
+                font-size: 18px;
+                font-weight: bold;
+                color: white;
+              };
+              --collapsible-container-text-open: {
+                color: black;
+              };
+              --collapsible-container-chevron: {
+                color: white;
+                height: 32px;
+                width: 32px;
+              };
+              --collapsible-container-chevron-open: {
+                color: black;
+              };
+            }
+          </style>
+          <accordion-container class="accordion">
+            <collapsible-container class="collapsible" header="Lorem ipsum dolor" chevron>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc neque orci, ultricies vitae sagittis eget, rutrum a odio. Integer dignissim mi justo. Nulla sed velit ut velit mollis rhoncus accumsan vitae sapien. Nunc tincidunt pulvinar pretium. Aliquam feugiat tellus turpis. Praesent ex purus, vestibulum sed dolor a, laoreet dapibus diam. Ut a maximus dui.
+              </p>
             </collapsible-container>
-            <collapsible-container header="Nunc ut viverra ipsum" open>
-              Nunc ut viverra ipsum. Aliquam eget consectetur arcu, id porta mauris. Phasellus id consequat est, vel cursus dolor. Morbi tempor semper enim, nec mollis lacus porta vel. Nunc facilisis, enim eu posuere sodales, erat mi sagittis ex, vel gravida mauris risus at orci. Aliquam a nibh porta, molestie sem non, feugiat ante. Quisque sit amet urna a est tristique gravida.
+            <collapsible-container class="collapsible" header="Nunc ut viverra ipsum" open chevron>
+              <p>
+                Nunc ut viverra ipsum. Aliquam eget consectetur arcu, id porta mauris. Phasellus id consequat est, vel cursus dolor. Morbi tempor semper enim, nec mollis lacus porta vel. Nunc facilisis, enim eu posuere sodales, erat mi sagittis ex, vel gravida mauris risus at orci. Aliquam a nibh porta, molestie sem non, feugiat ante. Quisque sit amet urna a est tristique gravida.
+              </p>
             </collapsible-container>
-            <collapsible-container header="Etiam mauris odio">
-              Etiam mauris odio, cursus et diam sit amet, ornare interdum sem. Praesent tortor justo, scelerisque a molestie ut, tempor id arcu. Morbi dignissim eros vitae faucibus consectetur. Mauris vitae augue id lacus congue dignissim ac nec enim. Nam ac sapien risus. Aliquam pretium maximus ipsum, vehicula efficitur risus lobortis sed.
+            <collapsible-container class="collapsible" header="Etiam mauris odio" chevron>
+              <p>
+                Etiam mauris odio, cursus et diam sit amet, ornare interdum sem. Praesent tortor justo, scelerisque a molestie ut, tempor id arcu. Morbi dignissim eros vitae faucibus consectetur. Mauris vitae augue id lacus congue dignissim ac nec enim. Nam ac sapien risus. Aliquam pretium maximus ipsum, vehicula efficitur risus lobortis sed.
+              </p>
             </collapsible-container>
           </accordion-container>
         </template>

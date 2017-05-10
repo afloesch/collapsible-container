@@ -44,7 +44,6 @@ Polymer 1.X and 2.X collapsible container
       :host .text {
         word-wrap: break-word;
         flex-grow: 1;
-        padding: 0 5px;
         @apply --collapsible-container-text;
       }
       :host .cell {
@@ -55,6 +54,10 @@ Polymer 1.X and 2.X collapsible container
         -webkit-transform: rotate(-180deg);
         transform: rotate(-180deg);
         transition-timing-function: ease;
+      }
+      :host iron-collapse {
+        overflow: hidden;
+        display: block;
       }
       :host([open]) .header {
         @apply --collapsible-container-header-open;
