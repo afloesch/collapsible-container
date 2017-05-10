@@ -2,11 +2,59 @@
 
 Polymer 1.X and 2.X collapsible container
 
-## Install the Polymer-CLI
+## Install
 
-First, make sure you have the [Polymer CLI](https://www.npmjs.com/package/polymer-cli) installed. Then run `polymer serve` to serve your element locally.
+```shell
+bower install --save polymer-collapsible-container
+```
+
+## Usage
+### collapsible-container
+<!--
+```
+<custom-element-demo height="200">
+  <template>
+    <link rel="import" href="collapsible-container.html">
+    <next-code-block></next-code-block>
+  </template>
+</custom-element-demo>
+```
+-->
+```html
+<collapsible-container header="Test">
+  Content goes here
+</collapsible-container>
+```
+
+### accordion-container
+<!--
+```
+<custom-element-demo height="200">
+  <template>
+    <link rel="import" href="collapsible-container.html">
+    <link rel="import" href="accordion-container.html">
+    <next-code-block></next-code-block>
+  </template>
+</custom-element-demo>
+```
+-->
+```html
+<accordion-container>
+  <collapsible-container header="Test">
+    Content goes here
+  </collapsible-container>
+  <collapsible-container header="Test 2">
+    Content goes here
+  </collapsible-container>
+  <collapsible-container header="Test 3">
+    Content goes here
+  </collapsible-container>
+</accordion-container>
+```
 
 ## Viewing Your Element
+
+First, make sure you have the [Polymer CLI](https://www.npmjs.com/package/polymer-cli) installed. Then run `polymer serve` to serve element locally.
 
 ```
 $ polymer serve
