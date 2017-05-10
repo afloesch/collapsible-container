@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>collapsible-container demo</title>
+
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../accordion-container.html">
+
+    <style is="custom-style" include="demo-pages-shared-styles">
+    </style>
+    <style>
+      .centered {
+        max-width: 800px !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="vertical-section-container centered">
+      <h3>accordion-container demo</h3>
+      <demo-snippet>
+        <template>
+          <accordion-container>
+            <collapsible-container header="Lorem ipsum dolor">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc neque orci, ultricies vitae sagittis eget, rutrum a odio. Integer dignissim mi justo. Nulla sed velit ut velit mollis rhoncus accumsan vitae sapien. Nunc tincidunt pulvinar pretium. Aliquam feugiat tellus turpis. Praesent ex purus, vestibulum sed dolor a, laoreet dapibus diam. Ut a maximus dui.
+            </collapsible-container>
+            <collapsible-container header="Nunc ut viverra ipsum">
+              Nunc ut viverra ipsum. Aliquam eget consectetur arcu, id porta mauris. Phasellus id consequat est, vel cursus dolor. Morbi tempor semper enim, nec mollis lacus porta vel. Nunc facilisis, enim eu posuere sodales, erat mi sagittis ex, vel gravida mauris risus at orci. Aliquam a nibh porta, molestie sem non, feugiat ante. Quisque sit amet urna a est tristique gravida.
+            </collapsible-container>
+            <collapsible-container header="Etiam mauris odio">
+              Etiam mauris odio, cursus et diam sit amet, ornare interdum sem. Praesent tortor justo, scelerisque a molestie ut, tempor id arcu. Morbi dignissim eros vitae faucibus consectetur. Mauris vitae augue id lacus congue dignissim ac nec enim. Nam ac sapien risus. Aliquam pretium maximus ipsum, vehicula efficitur risus lobortis sed.
+            </collapsible-container>
+          </accordion-container>
+        </template>
+      </demo-snippet>
+    </div>
+
+    <div class="vertical-section-container centered">
+      <h3>accordion-container with different container open on load</h3>
+      <demo-snippet>
+        <template>
+          <accordion-container>
+            <collapsible-container header="Lorem ipsum dolor">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc neque orci, ultricies vitae sagittis eget, rutrum a odio. Integer dignissim mi justo. Nulla sed velit ut velit mollis rhoncus accumsan vitae sapien. Nunc tincidunt pulvinar pretium. Aliquam feugiat tellus turpis. Praesent ex purus, vestibulum sed dolor a, laoreet dapibus diam. Ut a maximus dui.
+            </collapsible-container>
+            <collapsible-container header="Nunc ut viverra ipsum" open>
+              Nunc ut viverra ipsum. Aliquam eget consectetur arcu, id porta mauris. Phasellus id consequat est, vel cursus dolor. Morbi tempor semper enim, nec mollis lacus porta vel. Nunc facilisis, enim eu posuere sodales, erat mi sagittis ex, vel gravida mauris risus at orci. Aliquam a nibh porta, molestie sem non, feugiat ante. Quisque sit amet urna a est tristique gravida.
+            </collapsible-container>
+            <collapsible-container header="Etiam mauris odio">
+              Etiam mauris odio, cursus et diam sit amet, ornare interdum sem. Praesent tortor justo, scelerisque a molestie ut, tempor id arcu. Morbi dignissim eros vitae faucibus consectetur. Mauris vitae augue id lacus congue dignissim ac nec enim. Nam ac sapien risus. Aliquam pretium maximus ipsum, vehicula efficitur risus lobortis sed.
+            </collapsible-container>
+          </accordion-container>
+        </template>
+      </demo-snippet>
+    </div>
+
+    <div class="vertical-section-container centered">
+      <h3>accordion-container with custom style</h3>
+      <demo-snippet>
+        <template>
+          <accordion-container>
+            <collapsible-container header="Lorem ipsum dolor">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc neque orci, ultricies vitae sagittis eget, rutrum a odio. Integer dignissim mi justo. Nulla sed velit ut velit mollis rhoncus accumsan vitae sapien. Nunc tincidunt pulvinar pretium. Aliquam feugiat tellus turpis. Praesent ex purus, vestibulum sed dolor a, laoreet dapibus diam. Ut a maximus dui.
+            </collapsible-container>
+            <collapsible-container header="Nunc ut viverra ipsum" open>
+              Nunc ut viverra ipsum. Aliquam eget consectetur arcu, id porta mauris. Phasellus id consequat est, vel cursus dolor. Morbi tempor semper enim, nec mollis lacus porta vel. Nunc facilisis, enim eu posuere sodales, erat mi sagittis ex, vel gravida mauris risus at orci. Aliquam a nibh porta, molestie sem non, feugiat ante. Quisque sit amet urna a est tristique gravida.
+            </collapsible-container>
+            <collapsible-container header="Etiam mauris odio">
+              Etiam mauris odio, cursus et diam sit amet, ornare interdum sem. Praesent tortor justo, scelerisque a molestie ut, tempor id arcu. Morbi dignissim eros vitae faucibus consectetur. Mauris vitae augue id lacus congue dignissim ac nec enim. Nam ac sapien risus. Aliquam pretium maximus ipsum, vehicula efficitur risus lobortis sed.
+            </collapsible-container>
+          </accordion-container>
+        </template>
+      </demo-snippet>
+    </div>
+  </body>
+</html>

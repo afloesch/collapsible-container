@@ -1,0 +1,79 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="collapsible-container.html">
+
+<!--
+`collapsible-container`
+Polymer 1.X and 2.X accordion container
+
+@demo demo/accordion.html
+-->
+
+<dom-module id="accordion-container">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <slot></slot>
+  </template>
+  <script>
+    Polymer({
+      is: "accordion-container",
+
+      _collapsibleToggled: function(evt, self) {
+        var containers = self.getAllCollapsibles();
+        containers.forEach(function(item) {
+          if (item.open && item != evt.target) {
+            item.close();
+          }
+        });
+      },
+
+      attached: function() {
+        var self = this;
+        var containers = this.getAllCollapsibles();
+
+        if (!containers || containers.length === 0) {
+          throw 'No collapsible-containers could be found inside ' + this + ' !';
+        }
+
+        if (!this.getOpenCollapsible()) {
+          containers[0].set('open', true);
+        }
+
+        containers.forEach(function(item) {
+          item.addEventListener('collapsibleopened', function(evt) {
+            self._collapsibleToggled(evt, self);
+          }, false);
+        });
+      },
+
+      /**
+      * Get array of all the `collapsible-container` nodes
+      * @return Array
+      */
+      getAllCollapsibles: function() {
+        return this.querySelectorAll('collapsible-container');
+      },
+
+      /**
+      * Get the current open `collapsible-container` node
+      * @return collapsible-container
+      */
+      getOpenCollapsible: function() {
+        var containers = this.getAllCollapsibles();
+        var container = null;
+
+        for (var i = 0; i < containers.length; i++) {
+          if (containers[i].open) {
+            container = containers[i];
+            break;
+          }
+        }
+
+        return container;
+      }
+    });
+  </script>
+</dom-module>

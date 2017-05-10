@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>collapsible-container demo</title>
+
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../collapsible-container.html">
+
+    <style is="custom-style" include="demo-pages-shared-styles">
+    </style>
+    <style>
+      .centered {
+        max-width: 800px !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="vertical-section-container centered">
+      <h3>collapsible-container demo</h3>
+      <demo-snippet>
+        <template>
+          <collapsible-container header="Lorem ipsum dolor">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc neque orci, ultricies vitae sagittis eget, rutrum a odio. Integer dignissim mi justo. Nulla sed velit ut velit mollis rhoncus accumsan vitae sapien. Nunc tincidunt pulvinar pretium. Aliquam feugiat tellus turpis. Praesent ex purus, vestibulum sed dolor a, laoreet dapibus diam. Ut a maximus dui.
+          </collapsible-container>
+        </template>
+      </demo-snippet>
+    </div>
+
+    <div class="vertical-section-container centered">
+      <h3>collapsible-container with icons, already open</h3>
+      <demo-snippet>
+        <template>
+          <collapsible-container header="Lorem ipsum dolor" icon="icons:alarm" chevron open>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc neque orci, ultricies vitae sagittis eget, rutrum a odio. Integer dignissim mi justo. Nulla sed velit ut velit mollis rhoncus accumsan vitae sapien. Nunc tincidunt pulvinar pretium. Aliquam feugiat tellus turpis. Praesent ex purus, vestibulum sed dolor a, laoreet dapibus diam. Ut a maximus dui.
+            </p>
+          </collapsible-container>
+        </template>
+      </demo-snippet>
+    </div>
+
+    <div class="vertical-section-container centered">
+      <h3>collapsible-container with custom style</h3>
+      <demo-snippet>
+        <template>
+          <style is="custom-style">
+            .custom {
+              border: 2px solid #bf0b0b;
+              border-radius: 4px;
+              --collapsible-container-header: {
+                background-color: #bf0b0b;
+                padding: 15px;
+              };
+              --collapsible-container-header-open: {
+                background-color: black;
+              };
+              --collapsible-container-text: {
+                font-size: 18px;
+                font-weight: bold;
+                color: white;
+                justify-content: center;
+              };
+              --collapsible-container-text-open: {
+                color: grey;
+              };
+              --collapsible-container-chevron: {
+                color: white;
+                height: 32px;
+                width: 32px;
+              };
+              --collapsible-container-chevron-open: {
+                color: grey;
+              };
+              --collapsible-container-icon: {
+                color: #ffc876;
+                height: 32px;
+                width: 32px;
+              };
+              --collapsible-container-icon-open: {
+                color: grey;
+              };
+            }
+          </style>
+          <collapsible-container class="custom" header="Lorem ipsum dolor" icon="notification:priority-high" chevron>
+            <p style="padding:10px;">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc neque orci, ultricies vitae sagittis eget, rutrum a odio. Integer dignissim mi justo. Nulla sed velit ut velit mollis rhoncus accumsan vitae sapien. Nunc tincidunt pulvinar pretium. Aliquam feugiat tellus turpis. Praesent ex purus, vestibulum sed dolor a, laoreet dapibus diam. Ut a maximus dui.
+            </p>
+          </collapsible-container>
+        </template>
+      </demo-snippet>
+    </div>
+  </body>
+</html>
