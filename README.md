@@ -1,3 +1,5 @@
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/afloesch/collapsible-container)
+
 # \<collapsible-container\>
 
 Polymer 1.X and 2.X collapsible container
