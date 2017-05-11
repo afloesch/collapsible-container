@@ -14,7 +14,7 @@ bower install --save polymer-collapsible-container
 ### collapsible-container
 <!--
 ```
-<custom-element-demo height="100">
+<custom-element-demo height="60">
   <template>
     <link rel="import" href="collapsible-container.html">
     <next-code-block></next-code-block>
@@ -23,7 +23,7 @@ bower install --save polymer-collapsible-container
 ```
 -->
 ```html
-<collapsible-container header="Test">
+<collapsible-container header="Test Collapsible">
   Content goes here
 </collapsible-container>
 ```
@@ -31,7 +31,7 @@ bower install --save polymer-collapsible-container
 ### accordion-container
 <!--
 ```
-<custom-element-demo height="150">
+<custom-element-demo height="110">
   <template>
     <link rel="import" href="collapsible-container.html">
     <link rel="import" href="accordion-container.html">
@@ -42,13 +42,13 @@ bower install --save polymer-collapsible-container
 -->
 ```html
 <accordion-container>
-  <collapsible-container header="Test">
+  <collapsible-container header="Test Accordion">
     Content goes here
   </collapsible-container>
-  <collapsible-container header="Test 2">
+  <collapsible-container header="Test Accordion 2">
     Content goes here
   </collapsible-container>
-  <collapsible-container header="Test 3">
+  <collapsible-container header="Test Accordion 3">
     Content goes here
   </collapsible-container>
 </accordion-container>
