@@ -12,7 +12,7 @@ bower install --save polymer-collapsible-container
 ### collapsible-container
 <!--
 ```
-<custom-element-demo height="200">
+<custom-element-demo height="100">
   <template>
     <link rel="import" href="collapsible-container.html">
     <next-code-block></next-code-block>
@@ -29,7 +29,7 @@ bower install --save polymer-collapsible-container
 ### accordion-container
 <!--
 ```
-<custom-element-demo height="200">
+<custom-element-demo height="150">
   <template>
     <link rel="import" href="collapsible-container.html">
     <link rel="import" href="accordion-container.html">
@@ -52,7 +52,7 @@ bower install --save polymer-collapsible-container
 </accordion-container>
 ```
 
-## Viewing Your Element
+## Viewing This Element
 
 First, make sure you have the [Polymer CLI](https://www.npmjs.com/package/polymer-cli) installed. Then run `polymer serve` to serve element locally.
 

@@ -16,6 +16,30 @@
 `collapsible-container`
 Polymer 1.X and 2.X collapsible container
 
+### Usage
+```html
+<collapsible-container header="Header goes here">
+  Content goes here
+</collapsible-container>
+```
+
+### Styling
+
+`<collapsible-container>` provides the following custom properties and mixins
+for styling:
+
+Custom property | Description | Default
+----------------|-------------|----------
+`--collapsible-container-header` | Div for all collapsible header content | Unstyled
+`--collapsible-container-header-open` | Style to be applied to the container header when it is open | Unstyled
+`--collapsible-container-text` | Header text style | Unstyled
+`--collapsible-container-text-open` | Header text style when container open | Unstyled
+`--collapsible-container-icon` | Icon style | Default iron-icon styles
+`--collapsible-container-icon-open` | Icon style when container open | Default iron-icon styles
+`--collapsible-container-chevron` | Chevron style | Default iron-icon styles
+`--collapsible-container-chevron-open` | Chevron style when container open | Default iron-icon styles
+
+
 @demo demo/collapsible.html
 -->
 
@@ -149,11 +173,8 @@ Polymer 1.X and 2.X collapsible container
     },
 
     /**
-    * Open container. Fires a custom `collapsibleopened` event, which can then be
-    * subscribed to with
-    * ```javascript
-    * element.addEventListener('collapsibleopened', handler);
-    * ```
+    * Open container.
+    * @event collapsibleopened
     */
     open: function() {
       var container = this._getCollapse();
@@ -164,11 +185,8 @@ Polymer 1.X and 2.X collapsible container
     },
 
     /**
-    * Close container. Fires a custom `collapsibleclosed` event, which can then be
-    * subscribed to with
-    * ```javascript
-    * element.addEventListener('collapsibleclosed', handler);
-    * ```
+    * Close container.
+    * @event collapsibleclosed
     */
     close: function() {
       var container = this._getCollapse();
