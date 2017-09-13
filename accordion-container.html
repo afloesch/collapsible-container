@@ -38,11 +38,16 @@ Polymer 1.X and 2.X accordion container
 
       _collapsibleToggled: function(evt, self) {
         var containers = self.getAllCollapsibles();
-        containers.forEach(function(item) {
-          if (item.open && item != evt.target) {
-            item.close();
+        
+        if (containers && containers.length) {
+          for (var i = 0; i < containers.length; i++) {
+            var item = containers[i];
+             
+            if (item.open && item != evt.target) {
+              item.close();
+            }
           }
-        });
+        }
       },
 
       attached: function() {
@@ -57,11 +62,15 @@ Polymer 1.X and 2.X accordion container
           containers[0].set('open', true);
         }
 
-        containers.forEach(function(item) {
-          item.addEventListener('collapsibleopened', function(evt) {
-            self._collapsibleToggled(evt, self);
-          }, false);
-        });
+        if (containers && containers.length) {
+          for (var i = 0; i < containers.length; i++) {
+            var item = containers[i];
+
+            item.addEventListener('collapsibleopened', function (evt) {
+              self._collapsibleToggled(evt, self);
+            }, false);
+          }
+        }
       },
 
       /**
